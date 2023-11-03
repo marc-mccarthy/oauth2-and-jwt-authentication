@@ -11,7 +11,7 @@ const app = express()
 
 const frontUri = `http://${process.env.FRONT_HOST}:${process.env.FRONT_PORT}`
 
-app.use(cors({ origin: frontUri, credentials: true }))
+app.use(cors({ origin: frontUri, credentials: false }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.json())

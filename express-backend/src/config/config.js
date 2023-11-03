@@ -1,6 +1,6 @@
 const logger = require("../services/log")
 require('dotenv').config()
-console.log(process.env)
+console.log(process.env.GITHUB_AUTH_CLIENT_SECRET)
 
 const DEFAULT_BACK_HOST = "localhost"
 const DEFAULT_BACK_PORT = 3080

@@ -53,7 +53,7 @@ function LoginPage({handleLogin}) {
 
     const startWithGitHub = function (e) {
         e.preventDefault()
-                authController.startWithOAuth2(CONST.uri.auth.GITHUB_LOGIN)
+        authController.startWithOAuth2(CONST.uri.auth.GITHUB_LOGIN)
             .then(onSuccessLogin)
             .catch(onFailLogin)
     }

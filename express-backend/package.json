@@ -1,5 +1,5 @@
 {
-    "name": "expressbackend",
+    "name": "express-backend",
     "version": "1.0.0",
     "description": "",
     "main": "src/index.js",

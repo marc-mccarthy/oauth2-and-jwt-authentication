@@ -74,7 +74,7 @@ function AuthController(database, logger) {
     }
 
     this.oauthGithubLogin = async (request, response) => {
-        console.log(`**** in oauthGithubLogin: ${JSON.stringify(request.user, null, 2)}`)
+        //console.log(`**** in oauthGithubLogin: ${JSON.stringify(request.user, null, 2)}`)
         const userProfile = {
             id: request.user.id,
             name: request.user._json.name || "",

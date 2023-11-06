@@ -26,6 +26,7 @@ function LoginPage({handleLogin}) {
 
     useEffect(() => {
         let isUserAuthenticated = localStorage.getItem("sid")
+        console.log(`*** loginPage isUserAuthenticated: ${isUserAuthenticated}`)
         if (isUserAuthenticated) {
             handleLogin()
             return navigate("/home")
@@ -72,7 +73,7 @@ function LoginPage({handleLogin}) {
 
     const onSuccessLogin = function ({data}) {
         let { sid } = data
-
+        console.log(`**** in onSuccessLogin: ${JSON.stringify(sid, null, 2)}`)
         if (!sid) {
             let error = "An error occurred during the login process"
             console.log(error)
@@ -85,11 +86,11 @@ function LoginPage({handleLogin}) {
     }
 
     const onFailLogin = function (error) {
+        console.log(`**** ERROR in onFailLogin: ${error}`)
         if (typeof error !== "object" && !error.response?.data) {
             return
         }
         error = error.response.data.error
-        console.log(error)
         setMessageError(error)
     }
 

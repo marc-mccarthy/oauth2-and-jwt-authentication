@@ -9,6 +9,7 @@ const isUserAuthenticated = (request, response, next) => {
     logger.debug("Verifying JWT...")
 
     const jwtToken = request.cookies.jwt
+    console.log(`***** JWT TOKEN: ${JSON.stringify(jwtToken, null, 2)}`);
     jwt.verify(jwtToken, process.env.TOKEN_SECRET, (err, decodedToken) => {
         if (err) {
             logger.error(`Error during JWT verification: ${err}`)
@@ -19,7 +20,7 @@ const isUserAuthenticated = (request, response, next) => {
             next(error)
         } else {
             let { email } = decodedToken
-            logger.debug(`Successful JWT verification for user with email [${email}]`)
+            logger.info(`Successful JWT verification for user with email [${email}]`)
             next()
         }
     }) 

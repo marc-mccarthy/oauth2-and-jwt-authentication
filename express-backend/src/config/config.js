@@ -1,4 +1,6 @@
 const logger = require("../services/log")
+require('dotenv').config()
+console.log(process.env.GITHUB_AUTH_CLIENT_SECRET)
 
 const DEFAULT_BACK_HOST = "localhost"
 const DEFAULT_BACK_PORT = 3080
@@ -21,8 +23,8 @@ function validateServerConfiguration() {
     if (!isFrontPortConfigured()) {
         process.env.FRONT_PORT = DEFAULT_FRONT_PORT
     }
-    const backUri = `http://${process.env.BACK_HOST}:${process.env.BACK_PORT}`
-    const frontUri = `http://${process.env.FRONT_HOST}:${process.env.FRONT_PORT}`
+    const backUri = `https://${process.env.BACK_HOST}:${process.env.BACK_PORT}`
+    const frontUri = `https://${process.env.FRONT_HOST}:${process.env.FRONT_PORT}`
 
     logger.info(`   ✅ Back uri: ${backUri}`)
     logger.info(`   ✅ Front uri: ${frontUri}`)

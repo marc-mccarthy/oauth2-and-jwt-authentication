@@ -16,6 +16,7 @@ function AuthController(database, logger) {
 
     this.login = async (request, response) => {
         const { email, password } = request.body
+        console.log(`**** request body in login: ${JSON.stringify(request.body, null, 2)}`)
         try {
             const user = await this.database.getUserByEmail(email)
             if (!user) {
@@ -73,6 +74,7 @@ function AuthController(database, logger) {
     }
 
     this.oauthGithubLogin = async (request, response) => {
+        //console.log(`**** in oauthGithubLogin: ${JSON.stringify(request.user, null, 2)}`)
         const userProfile = {
             id: request.user.id,
             name: request.user._json.name || "",

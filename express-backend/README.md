@@ -1,9 +1,9 @@
 # Express Backend
 
 ## Versions:
-- **SO**: macOS 12.4
-- **NodeJS**: v14.16.0
-- **NPM**: 7.6.3
+- **SO**: Windows 10
+- **NodeJS**: v18.0.0
+- **NPM**: 8.11.0
 
 
 ## Quick start:
